@@ -1,0 +1,44 @@
+{
+  "name": "UW Easy Registration Bot",
+  "version": "3.0",
+  "manifest_version":2,
+  "description": "Easy registration for UW courses",
+
+  "browser_action": {
+    "default_popup":"mypopup.html",
+    "default_icon": "uw.png"
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2017&SLN=*"
+      ],
+      "js": [
+        "auto.js"
+      ]
+      },
+    {
+      "matches": [
+        "https://sdb.admin.uw.edu/students/uwnetid/register.asp"
+      ],
+      "js": [
+        "register.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://weblogin.washington.edu/"
+      ],
+      "js": [
+        "login.js"
+      ]
+    }
+
+  ]
+
+}
